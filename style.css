@@ -1,0 +1,262 @@
+/* ===============================================
+   Custom Stylesheet for Shivansh Tours and Travels 
+=============================================== */
+
+/* Smooth document scrolling behavior */
+html {
+    scroll-behavior: smooth;
+}
+
+/* ===============================================
+   Custom Brand Colors 
+=============================================== */
+.text-brand-orange {
+    color: #F25F22 !important;
+}
+
+.bg-brand-orange {
+    background-color: #F25F22 !important;
+}
+
+.text-brand-green {
+    color: #34A853 !important;
+}
+
+.bg-brand-green {
+    background-color: #34A853 !important;
+}
+
+/* ===============================================
+   Navbar & Card Hover Effects 
+=============================================== */
+
+/* Navigation text color on hover */
+.hover\:text-brand-orange:hover {
+    color: #F25F22 !important;
+}
+
+/* Premium dynamic shadow transition effect on cards */
+.hover\:shadow-2xl:hover {
+    box-shadow: 0 25px 50px -12px rgba(242, 95, 34, 0.15) !important;
+}
+
+/* Classic Navbar Link Hover Animation (Underline Effect) */
+.nav-link {
+    position: relative;
+    padding-bottom: 5px;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #F25F22;
+    transition: width 0.3s ease-in-out;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.nav-link:hover {
+    color: #F25F22 !important;
+}
+
+/* ===============================================
+   Continuous Auto-Scrolling Marquee Animation 
+=============================================== */
+.animate-scroll {
+    animation: scroll-left 25s linear infinite;
+}
+
+/* Pause the scrolling animation when mouse hovers over it */
+.group:hover .animate-scroll {
+    animation-play-state: paused;
+}
+
+@keyframes scroll-left {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+/* ===============================================
+   About Us Section Animations
+=============================================== */
+
+/* Zoom In-Out Heartbeat Animation for Icons */
+@keyframes icon-heartbeat {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.15); }
+    100% { transform: scale(1); }
+}
+
+.icon-zoom {
+    animation: icon-heartbeat 2.5s infinite ease-in-out;
+}
+
+/* Pause icon animation when user hovers over the card */
+.group:hover .icon-zoom {
+    animation-play-state: paused;
+    transform: scale(1.1);
+}
+
+/* ===============================================
+   Circular Rotating Gradient Animation 
+=============================================== */
+
+/* Rotates the outer gradient border clockwise */
+@keyframes spin-clockwise {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Rotates the inner image counter-clockwise to keep the photo straight */
+@keyframes spin-counter-clockwise {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(-360deg);
+    }
+}
+
+/* 12 seconds loop for a smooth, premium feel */
+.animate-spin-slow {
+    animation: spin-clockwise 12s linear infinite;
+}
+
+.animate-reverse-spin {
+    animation: spin-counter-clockwise 12s linear infinite;
+}
+
+/* ===============================================
+   Our Fleet Section Custom Animations
+=============================================== */
+
+/* Cards subtle float up effect on hover */
+.fleet-card {
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+}
+
+.fleet-card:hover {
+    transform: translateY(-8px);
+}
+
+/* Button smooth background and scale transform scale logic */
+.fleet-btn {
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.fleet-btn:hover {
+    transform: scale(1.02);
+    box-shadow: 0 10px 20px -5px rgba(242, 95, 34, 0.3);
+}
+
+.select-none {
+    user-select: none;
+}
+
+/* ===============================================
+   Ultra Effected Contact Form Custom Styles
+=============================================== */
+
+/* Floating Input Placeholder Effect */
+.effect-input-box input:focus ~ label,
+.effect-input-box input:not(:placeholder-shown) ~ label,
+.effect-input-box textarea:focus ~ label,
+.effect-input-box textarea:not(:placeholder-shown) ~ label {
+    top: -10px;
+    left: 10px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 0 6px;
+    background: #ffffff;
+    color: #F25F22;
+    border-radius: 4px;
+}
+
+/* Dark mode compatibility override for input label badges */
+.dark .effect-input-box input:focus ~ label,
+.dark .effect-input-box input:not(:placeholder-shown) ~ label,
+.dark .effect-input-box textarea:focus ~ label,
+.dark .effect-input-box textarea:not(:placeholder-shown) ~ label {
+    background: #161b22;
+    color: #34A853;
+}
+
+/* Neon Glow flares on Focus setup */
+.effect-input-box input:focus,
+.effect-input-box textarea:focus,
+#packages select:focus {
+    border-color: #F25F22 !important;
+    box-shadow: 0 0 20px rgba(242, 95, 34, 0.15) !important;
+    background-color: #ffffff !important;
+}
+
+.dark .effect-input-box input:focus,
+.dark .effect-input-box textarea:focus {
+    border-color: #34A853 !important;
+    box-shadow: 0 0 20px rgba(52, 168, 83, 0.2) !important;
+    background-color: #0d1117 !important;
+}
+
+/* Premium Cyber Button Slide Overlay Effect */
+.cyber-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: all 0.6s ease;
+}
+
+.cyber-btn:hover::before {
+    left: 100%;
+}
+
+.cyber-btn:hover {
+    box-shadow: 0 10px 25px -5px rgba(242, 95, 34, 0.4);
+    transform: translateY(-2px);
+}
+
+/* ===============================================
+   Infinite Continuous Review Scroll Marquee
+=============================================== */
+.animate-review-scroll {
+    animation: review-slide-left 30s linear infinite;
+}
+
+/* Pauses the rolling scroll animation seamlessly on user card hover state */
+.group:hover .animate-review-scroll {
+    animation-play-state: paused;
+}
+
+@keyframes review-slide-left {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%); /* Moves exactly halfway over the duplicate items stack */
+    }
+}
+
+/* Optional styling to make review elements pop out on card hover */
+.animate-review-scroll > div:hover {
+    transform: scale(1.03);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
+}

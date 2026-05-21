@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html lang="en" class="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shivansh Tours and Travels</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+    
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        'brand-orange': '#F25F22',
+                        'brand-green': '#34A853',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-sans text-gray-800 dark:text-gray-200 antialiased overflow-x-hidden bg-gray-50 dark:bg-[#0d1117] transition-colors duration-300">
+
+    <nav class="bg-white/95 dark:bg-[#161b22]/95 backdrop-blur-md shadow-lg fixed w-full z-50 top-0 transition-all duration-300 border-b-2 border-brand-orange">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-24">
+                
+               <a href="#home" class="flex items-center gap-3 group">
+                    <div class="w-14 h-14 rounded-full overflow-hidden border-2 border-brand-orange shadow-md transform transition-all duration-300 group-hover:rotate-6 group-hover:scale-105 group-hover:border-brand-green">
+                        
+                        <img src="images/logo.png" alt="Shivansh Travels Logo" class="w-full h-full object-cover">
+                        
+                    </div>
+                    
+                    <div class="flex flex-col">
+                        <span class="text-3xl font-black text-gray-900 dark:text-white tracking-widest uppercase drop-shadow-sm transition-colors duration-300 group-hover:text-brand-orange">Shivansh</span>
+                        <span class="text-xs font-bold text-brand-green tracking-[0.3em] uppercase">Tours & Travels</span>
+                    </div>
+                </a>
+
+                <div class="hidden lg:flex items-center space-x-5 xl:space-x-7">
+                    <a href="#home" class="nav-link text-gray-700 dark:text-gray-300 font-bold uppercase text-xs tracking-wider">Home</a>
+                    <a href="#about" class="nav-link text-gray-700 dark:text-gray-300 font-bold uppercase text-xs tracking-wider">About Us</a>
+                    <a href="#services" class="nav-link text-gray-700 dark:text-gray-300 font-bold uppercase text-xs tracking-wider">Services</a>
+                    <a href="#fleet" class="nav-link text-gray-700 dark:text-gray-300 font-bold uppercase text-xs tracking-wider">Our Fleet</a>
+                    <a href="#packages" class="nav-link text-gray-700 dark:text-gray-300 font-bold uppercase text-xs tracking-wider">Packages</a>
+                    <a href="#contact" class="nav-link text-gray-700 dark:text-gray-300 font-bold uppercase text-xs tracking-wider">Contact</a>
+                    
+                    <button id="theme-toggle" class="p-2 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-yellow-400 focus:outline-none hover:scale-110 transition shadow-sm">
+                        <svg id="theme-toggle-sun" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 2.293a1 1 0 011.414 0l.707.707a1 1 0 01-1.414 1.414l-.707-.707a1 1 0 010-1.414zm4.707 4.707a1 1 0 010 1.414l-1 .707a1 1 0 11-1.414-1.414l1-.707a1 1 0 011.414 0zM16 14a1 1 0 010 1.414l-.707.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM10 16a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM4.293 16a1 1 0 010-1.414l.707-.707a1 1 0 111.414 1.414l-.707.707a1 1 0 01-1.414 0zM2 10a1 1 0 011-1h1a1 1 0 110 2H3a1 1 0 01-1-1zm2.293-5.707a1 1 0 011.414 0l.707.707A1 1 0 115.707 6.414l-.707-.707a1 1 0 010-1.414zM10 5a5 5 0 100 10 5 5 0 000-10z"></path></svg>
+                        <svg id="theme-toggle-moon" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+                    </button>
+
+                    <a href="https://wa.me/918419994142?text=Hello%20Shivansh%20Tours%20and%20Travels,%20I%20want%20to%20book%20a%20ride.%20Please%20share%20the%20details." target="_blank" class="bg-brand-orange text-white px-5 py-2.5 rounded-full font-bold uppercase text-xs hover:bg-orange-700 transition shadow-md flex items-center gap-2">
+                        Book Now
+                    </a>
+                </div>
+
+                <div class="lg:hidden flex items-center gap-4">
+                    <button id="theme-toggle-mobile" class="p-2 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-yellow-400">
+                        <span id="theme-icon-mobile">🌙</span>
+                    </button>
+                    <button id="menu-btn" class="text-gray-880 dark:text-white focus:outline-none text-3xl hover:text-brand-orange transition">
+                        ☰
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="hidden bg-white dark:bg-[#161b22] border-t border-gray-100 dark:border-gray-800 shadow-xl absolute w-full left-0 max-h-[80vh] overflow-y-auto">
+            <div class="flex flex-col px-6 py-4 space-y-2 text-center">
+                <a href="#home" class="text-gray-800 dark:text-gray-200 font-bold uppercase hover:text-brand-orange py-3 border-b border-gray-100 dark:border-gray-800 transition">Home</a>
+                <a href="#about" class="text-gray-800 dark:text-gray-200 font-bold uppercase hover:text-brand-orange py-3 border-b border-gray-100 dark:border-gray-800 transition">About Us</a>
+                <a href="#services" class="text-gray-800 dark:text-gray-200 font-bold uppercase hover:text-brand-orange py-3 border-b border-gray-100 dark:border-gray-800 transition">Services</a>
+                <a href="#fleet" class="text-gray-800 dark:text-gray-200 font-bold uppercase hover:text-brand-orange py-3 border-b border-gray-100 dark:border-gray-800 transition">Our Fleet</a>
+                <a href="#packages" class="text-gray-800 dark:text-gray-200 font-bold uppercase hover:text-brand-orange py-3 border-b border-gray-100 dark:border-gray-800 transition">Packages</a>
+                <a href="#contact" class="text-gray-800 dark:text-gray-200 font-bold uppercase hover:text-brand-orange py-3 border-b border-gray-100 dark:border-gray-800 transition">Contact</a>
+                <a href="https://wa.me/918419994142" target="_blank" class="bg-brand-green text-white font-black uppercase py-3 rounded-lg mt-2 shadow-sm block">Book Now</a>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home" class="relative pt-32 pb-0 flex flex-col items-center justify-center min-h-screen overflow-hidden">
+        <img src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=2021&auto=format&fit=crop" class="absolute inset-0 w-full h-full object-cover z-0" alt="Travel Background">
+        <div class="absolute inset-0 bg-black/40 z-10"></div>
+
+        <div class="relative z-20 text-center px-4 max-w-4xl mx-auto flex-grow flex flex-col justify-center mt-12" data-aos="zoom-in" data-aos-duration="1200">
+            <div class="mb-6 inline-block bg-white/20 backdrop-blur-md border border-white/30 rounded-full px-5 py-2 text-white font-bold text-xs md:text-sm tracking-[0.2em] uppercase shadow-lg">
+                🌍 Explore the unseen with us
+            </div>
+            <h2 class="text-5xl md:text-7xl font-extrabold text-white mb-4 tracking-tight drop-shadow-2xl">
+                SHIVANSH <span class="text-brand-orange">TRAVELS</span>
+            </h2>
+            <p class="text-xl md:text-3xl italic font-semibold text-brand-green mb-8 tracking-wide drop-shadow-md">
+                "Life's a Journey. Let's Make it Special"
+            </p>
+            <p class="text-lg text-gray-100 mb-10 max-w-2xl mx-auto drop-shadow-lg leading-relaxed">
+                Your reliable partner for premium Car Rentals, comfortable outstation Cabs, Flight Bookings, and memorable Holiday Tours across India.
+            </p>
+            <div>
+                <a href="https://wa.me/918419994142" target="_blank" class="bg-brand-orange text-white px-10 py-4 rounded-full text-lg font-bold hover:bg-orange-600 transition transform hover:scale-105 shadow-[0_10px_25px_rgba(242,95,34,0.4)] inline-flex items-center gap-3">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+                    Chat on WhatsApp
+                </a>
+            </div>
+        </div>
+
+        <div class="relative z-20 w-full mt-12 bg-black/30 backdrop-blur-md py-5 border-t border-white/10">
+            <h3 class="text-center text-white text-xs font-bold tracking-[0.3em] uppercase mb-4 opacity-90">🔥 Popular Destinations</h3>
+            <div class="flex overflow-hidden group">
+                <div class="flex gap-4 min-w-max animate-scroll pl-4">
+                    <div class="relative w-40 h-24 rounded-lg overflow-hidden border border-white/20 cursor-pointer"><img src="https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?q=80&w=400&auto=format&fit=crop" class="w-full h-full object-cover hover:scale-110 transition duration-500"><div class="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent flex items-end justify-center pb-2 pointer-events-none"><span class="text-white text-sm font-bold tracking-widest uppercase">Goa</span></div></div>
+                    <div class="relative w-40 h-24 rounded-lg overflow-hidden border border-white/20 cursor-pointer"><img src="images/kokan.png" class="w-full h-full object-cover hover:scale-110 transition duration-500"><div class="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent flex items-end justify-center pb-2 pointer-events-none"><span class="text-white text-sm font-bold tracking-widest uppercase">Konkan</span></div></div>
+                    <div class="relative w-40 h-24 rounded-lg overflow-hidden border border-white/20 cursor-pointer"><img src="https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?q=80&w=400&auto=format&fit=crop" class="w-full h-full object-cover hover:scale-110 transition duration-500"><div class="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent flex items-end justify-center pb-2 pointer-events-none"><span class="text-white text-sm font-bold tracking-widest uppercase">Hill Stations</span></div></div>
+                    <div class="relative w-40 h-24 rounded-lg overflow-hidden border border-white/20 cursor-pointer"><img src="https://images.unsplash.com/photo-1561361513-2d000a50f0dc?q=80&w=400&auto=format&fit=crop" class="w-full h-full object-cover hover:scale-110 transition duration-500"><div class="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent flex items-end justify-center pb-2 pointer-events-none"><span class="text-white text-sm font-bold tracking-widest uppercase">Temples</span></div></div>
+                    <div class="relative w-40 h-24 rounded-lg overflow-hidden border border-white/20 cursor-pointer"><img src="https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?q=80&w=400&auto=format&fit=crop" class="w-full h-full object-cover hover:scale-110 transition duration-500"><div class="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent flex items-end justify-center pb-2 pointer-events-none"><span class="text-white text-sm font-bold tracking-widest uppercase">Kerala</span></div></div>
+                </div>
+                <div class="flex gap-4 min-w-max animate-scroll pl-4" aria-hidden="true">
+                    <div class="relative w-40 h-24 rounded-lg overflow-hidden border border-white/20"><img src="https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?q=80&w=400&auto=format&fit=crop" class="w-full h-full object-cover"><div class="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent flex items-end justify-center pb-2"><span class="text-white text-sm font-bold tracking-widest uppercase">Goa</span></div></div>
+                    <div class="relative w-40 h-24 rounded-lg overflow-hidden border border-white/20"><img src="images/kokan.png" class="w-full h-full object-cover"><div class="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent flex items-end justify-center pb-2"><span class="text-white text-sm font-bold tracking-widest uppercase">Konkan</span></div></div>
+                    <div class="relative w-40 h-24 rounded-lg overflow-hidden border border-white/20"><img src="https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?q=80&w=400&auto=format&fit=crop" class="w-full h-full object-cover"><div class="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent flex items-end justify-center pb-2"><span class="text-white text-sm font-bold tracking-widest uppercase">Hill Stations</span></div></div>
+                    <div class="relative w-40 h-24 rounded-lg overflow-hidden border border-white/20"><img src="https://images.unsplash.com/photo-1561361513-2d000a50f0dc?q=80&w=400&auto=format&fit=crop" class="w-full h-full object-cover"><div class="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent flex items-end justify-center pb-2"><span class="text-white text-sm font-bold tracking-widest uppercase">Temples</span></div></div>
+                    <div class="relative w-40 h-24 rounded-lg overflow-hidden border border-white/20"><img src="https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?q=80&w=400&auto=format&fit=crop" class="w-full h-full object-cover"><div class="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent flex items-end justify-center pb-2"><span class="text-white text-sm font-bold tracking-widest uppercase">Kerala</span></div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-24 bg-white dark:bg-[#161b22] relative transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div class="relative pl-6 pb-10" data-aos="fade-right" data-aos-duration="1000">
+                    <img src="https://images.unsplash.com/photo-1530521954074-e64f6810b32d?q=80&w=1000&auto=format&fit=crop" alt="Travel Experience" class="rounded-2xl shadow-2xl w-4/5 h-[350px] object-cover border-4 border-white dark:border-gray-800">
+                    <img src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?q=80&w=800&auto=format&fit=crop" alt="Premium Cab" class="rounded-2xl shadow-xl w-2/3 h-[220px] object-cover absolute -bottom-6 right-0 border-8 border-white dark:border-gray-800">
+                    <div class="absolute top-10 -left-4 bg-brand-orange text-white p-4 rounded-2xl shadow-lg flex flex-col items-center justify-center animate-bounce">
+                        <span class="text-2xl font-black">100%</span>
+                        <span class="text-[10px] font-bold uppercase tracking-wider">Safe Rides</span>
+                    </div>
+                </div>
+
+                <div class="space-y-6" data-aos="fade-left" data-aos-duration="1000">
+                    <h4 class="text-brand-orange font-bold tracking-[0.2em] uppercase text-sm flex items-center gap-3">
+                        <span class="w-10 h-[2px] bg-brand-orange inline-block"></span> Know About Us
+                    </h4>
+                    <h2 class="text-4xl font-extrabold text-gray-900 dark:text-white leading-tight">
+                        We Make Every Journey <span class="text-brand-green">Unforgettable</span>
+                    </h2>
+                    <p class="text-gray-600 dark:text-gray-400 text-base leading-relaxed">
+                        Welcome to <strong class="text-gray-900 dark:text-white font-bold">Shivansh Tours and Travels</strong>. Based in Dombivli with a strong network across Mumbai and Ratnagiri, we are dedicated to transforming your travel plans into beautiful, stress-free memories.
+                    </p>
+                    <p class="text-gray-600 dark:text-gray-400 text-base leading-relaxed">
+                        Whether you need a premium Ertiga for a quick outstation family trip, instant flight bookings, or a customized holiday package, our commitment to safety, punctuality, and comfort remains unmatched.
+                    </p>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+                        <div class="group flex items-center gap-4 bg-gray-50 dark:bg-[#0d1117] p-4 rounded-xl border border-gray-100 dark:border-gray-800 shadow-sm hover:shadow-md transition">
+                            <div class="bg-orange-50 dark:bg-orange-950/40 p-3 rounded-full text-xl icon-zoom">🛡️</div>
+                            <div>
+                                <h4 class="font-bold text-gray-900 dark:text-white text-sm">Verified Fleet</h4>
+                                <p class="text-xs text-gray-500 dark:text-gray-400">Well-maintained & clean cars.</p>
+                            </div>
+                        </div>
+                        <div class="group flex items-center gap-4 bg-gray-50 dark:bg-[#0d1117] p-4 rounded-xl border border-gray-100 dark:border-gray-800 shadow-sm hover:shadow-md transition">
+                            <div class="bg-green-50 dark:bg-green-950/40 p-3 rounded-full text-xl icon-zoom">👨‍💼</div>
+                            <div>
+                                <h4 class="font-bold text-gray-900 dark:text-white text-sm">Expert Drivers</h4>
+                                <p class="text-xs text-gray-500 dark:text-gray-400">Professional & route-savvy.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="founder" class="py-24 bg-[#161b22] dark:bg-[#0d1117] text-gray-300 relative block border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div class="space-y-6" data-aos="fade-right" data-aos-duration="1000">
+                    <div class="flex items-center gap-4">
+                        <div class="bg-blue-500 p-2.5 rounded-xl shadow-lg flex items-center justify-center">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.5 10.5L21 3m-7.5 7.5L10.5 13.5m3-3l-3 3m3-3l3 3M3 21l7.5-7.5M3 21l3-3m-3 3l3 3m10.5-10.5l-3 3m3-3v3m0-3h-3M10.5 13.5L3 21m7.5-7.5h3m-3 0v3"></path>
+                            </svg>
+                        </div>
+                        <h2 class="text-2xl md:text-3xl font-extrabold text-white tracking-wide">Founder's Vision</h2>
+                    </div>
+                    <p class="text-lg md:text-xl leading-relaxed text-gray-400 font-medium">
+                        Our goal is not just to reach a destination, but to ensure the journey itself is 
+                        <span class="text-[#2ecc71] font-bold">safe</span>, 
+                        <span class="text-[#3498db] font-bold">relaxing</span>, and 
+                        <span class="text-[#9b59b6] font-bold">purely joyful</span> for every single customer.
+                    </p>
+                    <div class="pt-6 border-t border-gray-800">
+                        <h3 class="text-xl font-bold text-white">Prathamesh Bhingarde</h3>
+                        <p class="text-xs text-[#F25F22] font-bold uppercase tracking-widest mt-1">Founder & Travel Consultant</p>
+                    </div>
+                </div>
+
+                <div class="flex justify-center lg:justify-end" data-aos="zoom-in" data-aos-duration="1000">
+                    <div class="relative w-64 h-64 md:w-80 md:h-80 rounded-full flex items-center justify-center p-1 bg-gradient-to-br from-[#e74c3c] via-[#f1c40f] to-[#2ecc71] shadow-[0_0_50px_rgba(46,204,113,0.15)] animate-spin-slow">
+                        <div class="w-full h-full rounded-full border-[6px] border-[#161b22] dark:border-[#0d1117] bg-[#0d1117] overflow-hidden flex items-center justify-center animate-reverse-spin">
+                            <img src="images/prathameshimg.jpeg" alt="Prathamesh Bhingarde" class="w-full h-full object-cover transform hover:scale-110 transition duration-300">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="py-24 bg-gray-50 dark:bg-[#161b22] relative overflow-hidden transition-colors duration-300">
+        <div class="absolute bottom-0 right-0 w-80 h-80 bg-brand-green/5 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute top-0 left-0 w-80 h-80 bg-brand-orange/5 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-20" data-aos="fade-down" data-aos-duration="1000">
+                <p class="text-brand-orange dark:text-orange-400 font-bold tracking-[0.2em] uppercase text-xs mb-2">What We Offer</p>
+                <h2 class="text-4xl md:text-5xl font-extrabold text-gray-900 dark:text-white">
+                    Our Premium <span class="text-brand-green">Services</span>
+                </h2>
+                <div class="w-24 h-1 bg-brand-orange mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                <div class="relative bg-white dark:bg-[#0d1117] p-8 rounded-3xl shadow-md border border-gray-100 dark:border-gray-800/60 text-center hover:shadow-[0_20px_40px_rgba(242,95,34,0.12)] transition-all duration-500 transform hover:-translate-y-2 group overflow-hidden cursor-pointer" data-aos="fade-right" data-aos-delay="100">
+                    <div class="absolute top-0 inset-x-0 h-1.5 bg-gradient-to-r from-brand-orange to-yellow-500 rounded-t-3xl"></div>
+                    <div class="absolute -bottom-6 -right-6 text-9xl text-gray-100/50 dark:text-gray-800/10 font-black select-none pointer-events-none transition-transform duration-700 group-hover:scale-125">CAB</div>
+                    <div class="text-6xl mb-6 inline-block transform transition-transform duration-500 group-hover:scale-110 group-hover:translate-x-3 drop-shadow-md">🚘</div>
+                    <h3 class="text-2xl font-bold mb-4 text-gray-800 dark:text-white group-hover:text-brand-orange transition-colors">Premium Car Rentals</h3>
+                    <p class="text-gray-500 dark:text-gray-400 text-sm leading-relaxed mb-6">Specialized Ertiga & tourist fleet for outstation journeys, local trips, and completely safe family tours.</p>
+                    <a href="https://wa.me/918419994142?text=Hello%20Prathamesh,%20I%20want%20to%20inquire%20about%20Premium%20Car%20Rental%20services." target="_blank" class="inline-flex items-center gap-2 text-brand-orange dark:text-orange-400 font-bold text-sm hover:gap-3 transition-all">
+                        <span>Inquire Now</span> <span class="text-base">➔</span>
+                    </a>
+                </div>
+
+                <div class="relative bg-white dark:bg-[#0d1117] p-8 rounded-3xl shadow-md border border-gray-100 dark:border-gray-800/60 text-center hover:shadow-[0_20px_40px_rgba(52,168,83,0.12)] transition-all duration-500 transform hover:-translate-y-2 group overflow-hidden cursor-pointer" data-aos="fade-up" data-aos-delay="200">
+                    <div class="absolute top-0 inset-x-0 h-1.5 bg-gradient-to-r from-brand-green to-teal-500 rounded-t-3xl"></div>
+                    <div class="absolute -bottom-6 -right-6 text-9xl text-gray-100/50 dark:text-gray-800/10 font-black select-none pointer-events-none transition-transform duration-700 group-hover:scale-125">FLY</div>
+                    <div class="text-6xl mb-6 inline-block transform transition-transform duration-700 group-hover:scale-110 group-hover:-translate-y-4 drop-shadow-md">✈️</div>
+                    <h3 class="text-2xl font-bold mb-4 text-gray-800 dark:text-white group-hover:text-brand-green transition-colors">Flight Bookings</h3>
+                    <p class="text-gray-500 dark:text-gray-400 text-sm leading-relaxed mb-6">Quick domestic and international flight ticket assistance at competitive rates.</p>
+                    <a href="https://wa.me/918419994142?text=Hello%20Prathamesh,%20I%20want%20to%20inquire%20about%20Flight%20Booking%20tickets." target="_blank" class="inline-flex items-center gap-2 text-brand-green dark:text-green-400 font-bold text-sm hover:gap-3 transition-all">
+                        <span>Inquire Now</span> <span class="text-base">➔</span>
+                    </a>
+                </div>
+
+                <div class="relative bg-white dark:bg-[#0d1117] p-8 rounded-3xl shadow-md border border-gray-100 dark:border-gray-800/60 text-center hover:shadow-[0_20px_40px_rgba(242,95,34,0.12)] transition-all duration-500 transform hover:-translate-y-2 group overflow-hidden cursor-pointer" data-aos="fade-left" data-aos-delay="300">
+                    <div class="absolute top-0 inset-x-0 h-1.5 bg-gradient-to-r from-brand-orange to-red-500 rounded-t-3xl"></div>
+                    <div class="absolute -bottom-6 -right-6 text-9xl text-gray-100/50 dark:text-gray-800/10 font-black select-none pointer-events-none transition-transform duration-700 group-hover:scale-125">TOUR</div>
+                    <div class="text-6xl mb-6 inline-block transform transition-transform duration-500 group-hover:scale-125 group-hover:rotate-12 drop-shadow-md">🌴</div>
+                    <h3 class="text-2xl font-bold mb-4 text-gray-800 dark:text-white group-hover:text-brand-orange transition-colors">Holiday Packages</h3>
+                    <p class="text-gray-500 dark:text-gray-400 text-sm leading-relaxed mb-6">Tailor-made completely customized holiday tour planning for a hassle-free vacation.</p>
+                    <a href="https://wa.me/918419994142?text=Hello%20Prathamesh,%20I%20want%20to%20inquire%20about%20Holiday%20Tour%20Packages." target="_blank" class="inline-flex items-center gap-2 text-brand-orange dark:text-orange-400 font-bold text-sm hover:gap-3 transition-all">
+                        <span>Inquire Now</span> <span class="text-base">➔</span>
+                    </a>
+                </div>
+
+                <div class="relative bg-white dark:bg-[#0d1117] p-8 rounded-3xl shadow-md border border-gray-100 dark:border-gray-800/60 text-center hover:shadow-[0_20px_40px_rgba(52,168,83,0.12)] transition-all duration-500 transform hover:-translate-y-2 group overflow-hidden cursor-pointer" data-aos="fade-up" data-aos-delay="400">
+                    <div class="absolute top-0 inset-x-0 h-1.5 bg-gradient-to-r from-brand-green to-emerald-500 rounded-t-3xl"></div>
+                    <div class="absolute -bottom-6 -right-6 text-9xl text-gray-100/50 dark:text-gray-800/10 font-black select-none pointer-events-none transition-transform duration-700 group-hover:scale-125">1WAY</div>
+                    <div class="text-6xl mb-6 inline-block transform transition-transform duration-500 group-hover:scale-110 group-hover:rotate-12 drop-shadow-md">🗺️</div>
+                    <h3 class="text-2xl font-bold mb-4 text-gray-800 dark:text-white group-hover:text-brand-green transition-colors">One-Way Drop Cabs</h3>
+                    <p class="text-gray-500 dark:text-gray-400 text-sm leading-relaxed mb-6">Affordable one-way drops to Mumbai, Pune, Nashik, Surat & more. Pay only for one side distance.</p>
+                    <a href="https://wa.me/918419994142?text=Hello%20Prathamesh,%20I%20want%20to%20book%20a%20One-Way%20Outstation%20Drop%20Cab." target="_blank" class="inline-flex items-center gap-2 text-brand-green dark:text-green-400 font-bold text-sm hover:gap-3 transition-all">
+                        <span>Inquire Now</span> <span class="text-base">➔</span>
+                    </a>
+                </div>
+
+                <div class="relative bg-white dark:bg-[#0d1117] p-8 rounded-3xl shadow-md border border-gray-100 dark:border-gray-800/60 text-center hover:shadow-[0_20px_40px_rgba(52,168,83,0.12)] transition-all duration-500 transform hover:-translate-y-2 group overflow-hidden cursor-pointer" data-aos="fade-up" data-aos-delay="500">
+                    <div class="absolute top-0 inset-x-0 h-1.5 bg-gradient-to-r from-brand-green to-yellow-500 rounded-t-3xl"></div>
+                    <div class="absolute -bottom-6 -right-6 text-9xl text-gray-100/50 dark:text-gray-800/10 font-black select-none pointer-events-none transition-transform duration-700 group-hover:scale-125">DEVA</div>
+                    <div class="text-6xl mb-6 inline-block transform transition-transform duration-500 group-hover:scale-110 group-hover:translate-y-1 drop-shadow-md">🙏</div>
+                    <h3 class="text-2xl font-bold mb-4 text-gray-800 dark:text-white group-hover:text-brand-green transition-colors">Pilgrimage & Religious Tours</h3>
+                    <p class="text-gray-500 dark:text-gray-400 text-sm leading-relaxed mb-6">Customized special spiritual tours like Ashtavinayak Darshan, Shirdi, and Jyotirlinga Yatra.</p>
+                    <a href="https://wa.me/918419994142?text=Hello%20Prathamesh,%20I%20want%20to%20inquire%20about%20Pilgrimage%20and%20Religious%20Tour%20Packages." target="_blank" class="inline-flex items-center gap-2 text-brand-green dark:text-green-400 font-bold text-sm hover:gap-3 transition-all">
+                        <span>Inquire Now</span> <span class="text-base">➔</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+    
+    <div class="fleet-card bg-white dark:bg-[#0d1117] rounded-3xl overflow-hidden shadow-lg hover:shadow-[0_20px_40px_rgba(242,95,34,0.15)] border border-gray-100 dark:border-gray-800 transition-all duration-500 flex flex-col group" data-aos="fade-up" data-aos-delay="100">
+        <div class="relative overflow-hidden bg-gradient-to-b from-orange-50 to-white dark:from-gray-900 dark:to-[#0d1117] p-4 h-64 md:h-72 flex items-center justify-center">
+            <img src="images/car.jpeg" alt="Maruti Ertiga" class="w-full max-w-[95%] h-full object-contain transform group-hover:scale-110 transition duration-500">
+            <span class="absolute top-4 right-4 bg-brand-green text-white text-xs font-bold px-3 py-1 rounded-full shadow-sm">6+1 Seater</span>
+        </div>
+        
+        <div class="p-6 flex-grow space-y-4">
+            <div class="flex justify-between items-center">
+                <h3 class="text-xl font-bold text-gray-900 dark:text-white group-hover:text-brand-orange transition-colors">Maruti Ertiga</h3>
+                <span class="text-brand-orange font-extrabold text-sm bg-orange-50 dark:bg-orange-950/40 px-3 py-1 rounded-lg">Top Choice</span>
+            </div>
+            <p class="text-gray-500 dark:text-gray-400 text-sm leading-relaxed">Perfect for comfortable outstation family trips, local tours, and completely safe family tours with expert guidance.</p>
+        </div>
+        
+        <div class="p-6 pt-0 mt-auto">
+           <a href="https://wa.me/918419994142?text=Hello%20Prathamesh,%20I%20am%20interested%20in%20booking%20the%20Maruti%20Ertiga%20(6%2B1%20Seater)%20for%20a%20trip." target="_blank" class="fleet-btn w-full bg-gray-900 dark:bg-gray-800 text-white font-bold py-3 px-6 rounded-xl flex items-center justify-center gap-2 transition-all duration-300 group-hover:bg-brand-orange">
+                <span>Book Ertiga Now</span> ➔
+            </a>
+        </div>
+    </div>
+
+    <div class="fleet-card bg-white dark:bg-[#0d1117] rounded-3xl overflow-hidden shadow-lg hover:shadow-[0_20px_40px_rgba(242,95,34,0.15)] border border-gray-100 dark:border-gray-800 transition-all duration-500 flex flex-col group" data-aos="fade-up" data-aos-delay="200">
+        <div class="relative overflow-hidden bg-gradient-to-b from-green-50 to-white dark:from-gray-900 dark:to-[#0d1117] p-4 h-64 md:h-72 flex items-center justify-center">
+            <img src="images/dzire.png" alt="Premium Dzire" class="w-full max-w-[95%] h-full object-contain transform group-hover:scale-110 transition duration-500">
+            <span class="absolute top-4 right-4 bg-brand-orange text-white text-xs font-bold px-3 py-1 rounded-full shadow-sm">4+1 Seater</span>
+        </div>
+        
+        <div class="p-6 flex-grow space-y-4">
+            <div class="flex justify-between items-center">
+                <h3 class="text-xl font-bold text-gray-900 dark:text-white group-hover:text-brand-green transition-colors">Premium Dzire</h3>
+                <span class="text-brand-green font-extrabold text-sm bg-green-50 dark:bg-green-950/40 px-3 py-1 rounded-lg">Comfort</span>
+            </div>
+            <p class="text-gray-500 dark:text-gray-400 text-sm leading-relaxed">Ideal for business travels, couple trips, airport pickups/drops, and premium executive local traveling.</p>
+        </div>
+        
+        <div class="p-6 pt-0 mt-auto">
+            <a href="https://wa.me/918419994142?text=Hello%20Prathamesh,%20I%20want%20to%20inquire%20about%20the%20Premium%20Dzire." target="_blank" class="fleet-btn w-full bg-gray-900 dark:bg-gray-800 text-white font-bold py-3 px-6 rounded-xl flex items-center justify-center gap-2 transition-all duration-300 group-hover:bg-brand-green">
+                <span>Book Dzire Now</span> ➔
+            </a>
+        </div>
+    </div>
+
+    <div class="fleet-card bg-white dark:bg-[#0d1117] rounded-3xl overflow-hidden shadow-lg hover:shadow-[0_20px_40px_rgba(242,95,34,0.15)] border border-gray-100 dark:border-gray-800 transition-all duration-500 flex flex-col group" data-aos="fade-up" data-aos-delay="300">
+        <div class="relative overflow-hidden bg-gradient-to-b from-orange-50 to-white dark:from-gray-900 dark:to-[#0d1117] p-4 h-64 md:h-72 flex items-center justify-center">
+            <img src="images/innova.png" alt="Innova Crysta" class="w-full max-w-[95%] h-full object-contain transform group-hover:scale-110 transition duration-500">
+            <span class="absolute top-4 right-4 bg-brand-green text-white text-xs font-bold px-3 py-1 rounded-full shadow-sm">7+1 Seater</span>
+        </div>
+        
+        <div class="p-6 flex-grow space-y-4">
+            <div class="flex justify-between items-center">
+                <h3 class="text-xl font-bold text-gray-900 dark:text-white group-hover:text-brand-orange transition-colors">Innova Crysta</h3>
+                <span class="text-brand-orange font-extrabold text-sm bg-orange-50 dark:bg-orange-950/40 px-3 py-1 rounded-lg">Premium</span>
+            </div>
+            <p class="text-gray-500 dark:text-gray-400 text-sm leading-relaxed">Ultimate comfort for VIP tours, corporate clients, and premium family long-distance holiday trips.</p>
+        </div>
+        
+        <div class="p-6 pt-0 mt-auto">
+            <a href="https://wa.me/918419994142?text=Hello%20Prathamesh,%20I%20want%20to%20book%20the%20Innova%20Crysta." target="_blank" class="fleet-btn w-full bg-gray-900 dark:bg-gray-800 text-white font-bold py-3 px-6 rounded-xl flex items-center justify-center gap-2 transition-all duration-300 group-hover:bg-brand-orange">
+                <span>Book Innova Now</span> ➔
+            </a>
+        </div>
+    </div>
+
+</div>
+
+    <section id="packages" class="py-24 bg-white dark:bg-[#0d1117] relative transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center mb-16" data-aos="fade-down" data-aos-duration="1000">
+                <p class="text-brand-orange font-bold tracking-[0.2em] uppercase text-xs mb-2">Trending Tours</p>
+                <h2 class="text-4xl font-extrabold text-gray-900 dark:text-white leading-tight">
+                    Popular Holiday <span class="text-brand-green">Packages</span>
+                </h2>
+                <div class="w-24 h-1 bg-brand-green mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                
+                <div class="bg-gray-50 dark:bg-[#161b22] rounded-3xl overflow-hidden shadow-md hover:shadow-[0_20px_40px_rgba(242,95,34,0.15)] border border-gray-100 dark:border-gray-800 transition-all duration-500 transform hover:-translate-y-2 group flex flex-col" data-aos="fade-up" data-aos-delay="100">
+                    <div class="relative h-64 overflow-hidden bg-gray-200">
+                        <img src="https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?q=80&w=600&auto=format&fit=crop" alt="Goa Tour" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700">
+                        <span class="absolute bottom-4 left-4 bg-brand-orange text-white text-xs font-bold px-4 py-1.5 rounded-full shadow-md">3 Nights / 4 Days</span>
+                    </div>
+                    <div class="p-6 flex-grow space-y-4">
+                        <div class="flex justify-between items-center">
+                            <h3 class="text-2xl font-bold text-gray-900 dark:text-white group-hover:text-brand-orange transition-colors">Goa Beach Special</h3>
+                            <span class="text-xs font-bold bg-orange-50 dark:bg-orange-950/40 text-brand-orange px-2.5 py-1 rounded-md">Best Seller</span>
+                        </div>
+                        <p class="text-gray-500 dark:text-gray-400 text-sm leading-relaxed">Explore beautiful beaches, historic forts, water sports, and vibrant nightlife of North & South Goa.</p>
+                        <div class="flex flex-wrap gap-2 pt-2 text-xs font-semibold text-gray-600 dark:text-gray-400">
+                            <span class="bg-white dark:bg-[#0d1117] px-3 py-1.5 rounded-lg border border-gray-100 dark:border-gray-800">🚗 Car Rental</span>
+                            <span class="bg-white dark:bg-[#0d1117] px-3 py-1.5 rounded-lg border border-gray-100 dark:border-gray-800">🏨 Hotel Stay</span>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0 mt-auto">
+                        <a href="https://wa.me/918419994142?text=Hello%20Prathamesh,%20I%20want%20to%20inquire%20about%20the%20Goa%20Beach%20Special%20Tour%20Package." target="_blank" class="w-full bg-brand-orange text-white font-bold py-3.5 px-6 rounded-xl flex items-center justify-center gap-2 hover:bg-orange-600 transition shadow-md">
+                            <span>Book Goa Package</span> <span>➔</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="bg-gray-50 dark:bg-[#161b22] rounded-3xl overflow-hidden shadow-md hover:shadow-[0_20px_40px_rgba(52,168,83,0.15)] border border-gray-100 dark:border-gray-800 transition-all duration-500 transform hover:-translate-y-2 group flex flex-col" data-aos="fade-up" data-aos-delay="200">
+                    <div class="relative h-64 overflow-hidden bg-gray-200">
+                        <img src="images/kokan.png" alt="Konkan Tour" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700">
+                        <span class="absolute bottom-4 left-4 bg-brand-green text-white text-xs font-bold px-4 py-1.5 rounded-full shadow-md">4 Nights / 5 Days</span>
+                    </div>
+                    <div class="p-6 flex-grow space-y-4">
+                        <div class="flex justify-between items-center">
+                            <h3 class="text-2xl font-bold text-gray-900 dark:text-white group-hover:text-brand-green transition-colors">Konkan Divine & Beach</h3>
+                            <span class="text-xs font-bold bg-green-50 dark:bg-green-950/40 text-brand-green px-2.5 py-1 rounded-md">Nature Tour</span>
+                        </div>
+                        <p class="text-gray-500 dark:text-gray-400 text-sm leading-relaxed">Experience pristine beaches of Ganpatipule, Ratnagiri, Malvan, majestic sea forts, and authentic Konkani food.</p>
+                        <div class="flex flex-wrap gap-2 pt-2 text-xs font-semibold text-gray-600 dark:text-gray-400">
+                            <span class="bg-white dark:bg-[#0d1117] px-3 py-1.5 rounded-lg border border-gray-100 dark:border-gray-800">🏖️ Beach Tour</span>
+                            <span class="bg-white dark:bg-[#0d1117] px-3 py-1.5 rounded-lg border border-gray-100 dark:border-gray-800">🙏 Temples</span>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0 mt-auto">
+                        <a href="https://wa.me/918419994142?text=Hello%20Prathamesh,%20I%20want%20to%20inquire%20about%20the%20Konkan%20Divine%20and%20Beach%20Tour%20Package." target="_blank" class="w-full bg-brand-green text-white font-bold py-3.5 px-6 rounded-xl flex items-center justify-center gap-2 hover:bg-green-600 transition shadow-md">
+                            <span>Book Konkan Package</span> <span>➔</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="bg-gray-50 dark:bg-[#161b22] rounded-3xl overflow-hidden shadow-md hover:shadow-[0_20px_40px_rgba(242,95,34,0.15)] border border-gray-100 dark:border-gray-800 transition-all duration-500 transform hover:-translate-y-2 group flex flex-col" data-aos="fade-up" data-aos-delay="300">
+                    <div class="relative h-64 overflow-hidden bg-gray-200">
+                        <img src="https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?q=80&w=600&auto=format&fit=crop" alt="Mahabaleshwar Tour" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700">
+                        <span class="absolute bottom-4 left-4 bg-brand-orange text-white text-xs font-bold px-4 py-1.5 rounded-full shadow-md">2 Nights / 3 Days</span>
+                    </div>
+                    <div class="p-6 flex-grow space-y-4">
+                        <div class="flex justify-between items-center">
+                            <h3 class="text-2xl font-bold text-gray-900 dark:text-white group-hover:text-brand-orange transition-colors">Mahabaleshwar Special</h3>
+                            <span class="text-xs font-bold bg-orange-50 dark:bg-orange-950/40 text-brand-orange px-2.5 py-1 rounded-md">Hills Special</span>
+                        </div>
+                        <p class="text-gray-500 dark:text-gray-400 text-sm leading-relaxed">Relax in the cool valleys, strawberry farms, Mapro garden, and beautiful viewpoints of Panchgani.</p>
+                        <div class="flex flex-wrap gap-2 pt-2 text-xs font-semibold text-gray-600 dark:text-gray-400">
+                            <span class="bg-white dark:bg-[#0d1117] px-3 py-1.5 rounded-lg border border-gray-100 dark:border-gray-800">🏔️ Hill Station</span>
+                            <span class="bg-white dark:bg-[#0d1117] px-3 py-1.5 rounded-lg border border-gray-100 dark:border-gray-800">🍓 Family Fun</span>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0 mt-auto">
+                        <a href="https://wa.me/918419994142?text=Hello%20Prathamesh,%20I%20want%20to%20inquire%20about%20the%20Mahabaleshwar%20Tour%20Package." target="_blank" class="w-full bg-brand-orange text-white font-bold py-3.5 px-6 rounded-xl flex items-center justify-center gap-2 hover:bg-orange-600 transition shadow-md">
+                            <span>Book Hills Package</span> <span>➔</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="bg-gray-50 dark:bg-[#161b22] rounded-3xl overflow-hidden shadow-md hover:shadow-[0_20px_40px_rgba(52,168,83,0.15)] border border-gray-100 dark:border-gray-800 transition-all duration-500 transform hover:-translate-y-2 group flex flex-col" data-aos="fade-up" data-aos-delay="400">
+                    <div class="relative h-64 overflow-hidden bg-gray-200">
+                        <img src="https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?q=80&w=600&auto=format&fit=crop" alt="Kerala Tour" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700">
+                        <span class="absolute bottom-4 left-4 bg-brand-green text-white text-xs font-bold px-4 py-1.5 rounded-full shadow-md">5 Nights / 6 Days</span>
+                    </div>
+                    <div class="p-6 flex-grow space-y-4">
+                        <div class="flex justify-between items-center">
+                            <h3 class="text-2xl font-bold text-gray-900 dark:text-white group-hover:text-brand-green transition-colors">Kerala Paradise Tour</h3>
+                            <span class="text-xs font-bold bg-green-50 dark:bg-green-950/40 text-brand-green px-2.5 py-1 rounded-md">South India</span>
+                        </div>
+                        <p class="text-gray-500 dark:text-gray-400 text-sm leading-relaxed">Enjoy the serene houseboats in Alleppey, beautiful tea gardens of Munnar, and beaches of Kovalam.</p>
+                        <div class="flex flex-wrap gap-2 pt-2 text-xs font-semibold text-gray-600 dark:text-gray-400">
+                            <span class="bg-white dark:bg-[#0d1117] px-3 py-1.5 rounded-lg border border-gray-100 dark:border-gray-800">⛵ Houseboat</span>
+                            <span class="bg-white dark:bg-[#0d1117] px-3 py-1.5 rounded-lg border border-gray-100 dark:border-gray-800">🌿 Greenery</span>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0 mt-auto">
+                        <a href="https://wa.me/918419994142?text=Hello%20Prathamesh,%20I%20want%20to%20inquire%20about%20the%20Kerala%20Paradise%20Tour%20Package." target="_blank" class="w-full bg-brand-green text-white font-bold py-3.5 px-6 rounded-xl flex items-center justify-center gap-2 hover:bg-green-600 transition shadow-md">
+                            <span>Book Kerala Package</span> <span>➔</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="bg-gray-50 dark:bg-[#161b22] rounded-3xl overflow-hidden shadow-md hover:shadow-[0_20px_40px_rgba(242,95,34,0.15)] border border-gray-100 dark:border-gray-800 transition-all duration-500 transform hover:-translate-y-2 group flex flex-col" data-aos="fade-up" data-aos-delay="500">
+                    <div class="relative h-64 overflow-hidden bg-gray-200">
+                        <img src="https://images.unsplash.com/photo-1605649487212-47bdab064df7?q=80&w=600&auto=format&fit=crop" alt="Manali Tour" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700">
+                        <span class="absolute bottom-4 left-4 bg-brand-orange text-white text-xs font-bold px-4 py-1.5 rounded-full shadow-md">5 Nights / 6 Days</span>
+                    </div>
+                    <div class="p-6 flex-grow space-y-4">
+                        <div class="flex justify-between items-center">
+                            <h3 class="text-2xl font-bold text-gray-900 dark:text-white group-hover:text-brand-orange transition-colors">Manali & Shimla Bliss</h3>
+                            <span class="text-xs font-bold bg-orange-50 dark:bg-orange-950/40 text-brand-orange px-2.5 py-1 rounded-md">Snow Hills</span>
+                        </div>
+                        <p class="text-gray-500 dark:text-gray-400 text-sm leading-relaxed">Experience beautiful snow valleys, Solang Valley adventures, and refreshing mountain air of Himachal.</p>
+                        <div class="flex flex-wrap gap-2 pt-2 text-xs font-semibold text-gray-600 dark:text-gray-400">
+                            <span class="bg-white dark:bg-[#0d1117] px-3 py-1.5 rounded-lg border border-gray-100 dark:border-gray-800">❄️ Snow Tour</span>
+                            <span class="bg-white dark:bg-[#0d1117] px-3 py-1.5 rounded-lg border border-gray-100 dark:border-gray-800">🏨 Premium Stay</span>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0 mt-auto">
+                        <a href="https://wa.me/918419994142?text=Hello%20Prathamesh,%20I%20want%20to%20inquire%20about%20the%20Manali%20and%20Shimla%20Bliss%20Tour%20Package." target="_blank" class="w-full bg-brand-orange text-white font-bold py-3.5 px-6 rounded-xl flex items-center justify-center gap-2 hover:bg-orange-600 transition shadow-md">
+                            <span>Book Manali Package</span> <span>➔</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="bg-gray-50 dark:bg-[#161b22] rounded-3xl overflow-hidden shadow-md hover:shadow-[0_20px_40px_rgba(52,168,83,0.15)] border border-gray-100 dark:border-gray-800 transition-all duration-500 transform hover:-translate-y-2 group flex flex-col" data-aos="fade-up" data-aos-delay="600">
+                    <div class="relative h-64 overflow-hidden bg-gray-200">
+                        <img src="images/rajastan.png" alt="Rajasthan Tour" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700">
+                        <span class="absolute bottom-4 left-4 bg-brand-green text-white text-xs font-bold px-4 py-1.5 rounded-full shadow-md">4 Nights / 5 Days</span>
+                    </div>
+                    <div class="p-6 flex-grow space-y-4">
+                        <div class="flex justify-between items-center">
+                            <h3 class="text-2xl font-bold text-gray-900 dark:text-white group-hover:text-brand-green transition-colors">Royal Rajasthan Heritage</h3>
+                            <span class="text-xs font-bold bg-green-50 dark:bg-green-950/40 text-brand-green px-2.5 py-1 rounded-md">Kings Land</span>
+                        </div>
+                        <p class="text-gray-500 dark:text-gray-400 text-sm leading-relaxed">Explore historical palaces, grand camel desert safaris, and majestic forts of Jaipur & Udaipur.</p>
+                        <div class="flex flex-wrap gap-2 pt-2 text-xs font-semibold text-gray-600 dark:text-gray-400">
+                            <span class="bg-white dark:bg-[#0d1117] px-3 py-1.5 rounded-lg border border-gray-100 dark:border-gray-800">🏰 Fort Safari</span>
+                            <span class="bg-white dark:bg-[#0d1117] px-3 py-1.5 rounded-lg border border-gray-100 dark:border-gray-800">🐫 Desert Fun</span>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0 mt-auto">
+                        <a href="https://wa.me/918419994142?text=Hello%20Prathamesh,%20I%20want%20to%20inquire%20about%20the%20Royal%20Rajasthan%20Heritage%20Tour%20Package." target="_blank" class="w-full bg-brand-green text-white font-bold py-3.5 px-6 rounded-xl flex items-center justify-center gap-2 hover:bg-green-600 transition shadow-md">
+                            <span>Book Royal Package</span> <span>➔</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="bg-gray-50 dark:bg-[#161b22] rounded-3xl overflow-hidden shadow-md hover:shadow-[0_20px_40px_rgba(242,95,34,0.15)] border border-gray-100 dark:border-gray-800 transition-all duration-500 transform hover:-translate-y-2 group flex flex-col" data-aos="fade-up" data-aos-delay="700">
+                    <div class="relative h-64 overflow-hidden bg-gray-200">
+                        <img src="https://images.unsplash.com/photo-1564507592333-c60657eea523?q=80&w=600&auto=format&fit=crop" alt="Agra Taj Mahal" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700">
+                        <span class="absolute bottom-4 left-4 bg-brand-orange text-white text-xs font-bold px-4 py-1.5 rounded-full shadow-md">3 Nights / 4 Days</span>
+                    </div>
+                    <div class="p-6 flex-grow space-y-4">
+                        <div class="flex justify-between items-center">
+                            <h3 class="text-2xl font-bold text-gray-900 dark:text-white group-hover:text-brand-orange transition-colors">Taj Mahal & Delhi Tour</h3>
+                            <span class="text-xs font-bold bg-orange-50 dark:bg-orange-950/40 text-brand-orange px-2.5 py-1 rounded-md">Wonders Tour</span>
+                        </div>
+                        <p class="text-gray-500 dark:text-gray-400 text-sm leading-relaxed">Witness the iconic beauty of Taj Mahal in Agra, Red Fort, Qutub Minar, and India Gate sightseeing.</p>
+                        <div class="flex flex-wrap gap-2 pt-2 text-xs font-semibold text-gray-600 dark:text-gray-400">
+                            <span class="bg-white dark:bg-[#0d1117] px-3 py-1.5 rounded-lg border border-gray-100 dark:border-gray-800">🕌 Taj Mahal</span>
+                            <span class="bg-white dark:bg-[#0d1117] px-3 py-1.5 rounded-lg border border-gray-100 dark:border-gray-800">🏢 Capital Visit</span>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0 mt-auto">
+                        <a href="https://wa.me/918419994142?text=Hello%20Prathamesh,%20I%20want%20to%20inquire%20about%20the%20Taj%20Mahal%20and%20Delhi%20Tour%20Package." target="_blank" class="w-full bg-brand-orange text-white font-bold py-3.5 px-6 rounded-xl flex items-center justify-center gap-2 hover:bg-orange-600 transition shadow-md">
+                            <span>Book Agra Package</span> <span>➔</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="bg-gray-50 dark:bg-[#161b22] rounded-3xl overflow-hidden shadow-md hover:shadow-[0_20px_40px_rgba(52,168,83,0.15)] border border-gray-100 dark:border-gray-800 transition-all duration-500 transform hover:-translate-y-2 group flex flex-col" data-aos="fade-up" data-aos-delay="800">
+                    <div class="relative h-64 overflow-hidden bg-gray-200">
+                        <img src="images/kashmir.png" alt="Kashmir" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700">
+                        <span class="absolute bottom-4 left-4 bg-brand-green text-white text-xs font-bold px-4 py-1.5 rounded-full shadow-md">5 Nights / 6 Days</span>
+                    </div>
+                    <div class="p-6 flex-grow space-y-4">
+                        <div class="flex justify-between items-center">
+                            <h3 class="text-2xl font-bold text-gray-900 dark:text-white group-hover:text-brand-green transition-colors">Kashmir Heaven Tour</h3>
+                            <span class="text-xs font-bold bg-green-50 dark:bg-green-950/40 text-brand-green px-2.5 py-1 rounded-md">Premium Pick</span>
+                        </div>
+                        <p class="text-gray-500 dark:text-gray-400 text-sm leading-relaxed">Relax on Shikara rides at Dal Lake, visit beautiful Srinagar valleys, Gulmarg snow mountains, and Sonamarg.</p>
+                        <div class="flex flex-wrap gap-2 pt-2 text-xs font-semibold text-gray-600 dark:text-gray-400">
+                            <span class="bg-white dark:bg-[#0d1117] px-3 py-1.5 rounded-lg border border-gray-100 dark:border-gray-800">🌸 Shikara Ride</span>
+                            <span class="bg-white dark:bg-[#0d1117] px-3 py-1.5 rounded-lg border border-gray-100 dark:border-gray-800">🏔️ Paradise Hills</span>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0 mt-auto">
+                        <a href="https://wa.me/918419994142?text=Hello%20Prathamesh,%20I%20want%20to%20inquire%20about%20the%20Kashmir%20Heaven%20Tour%20Package." target="_blank" class="w-full bg-brand-green text-white font-bold py-3.5 px-6 rounded-xl flex items-center justify-center gap-2 hover:bg-green-600 transition shadow-md">
+                            <span>Book Kashmir Package</span> <span>➔</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="bg-gray-50 dark:bg-[#161b22] rounded-3xl overflow-hidden shadow-md hover:shadow-[0_20px_40px_rgba(242,95,34,0.15)] border border-gray-100 dark:border-gray-800 transition-all duration-500 transform hover:-translate-y-2 group flex flex-col" data-aos="fade-up" data-aos-delay="900">
+                    <div class="relative h-64 overflow-hidden bg-gray-200">
+                        <img src="https://images.unsplash.com/photo-1589308078059-be1415eab4c3?q=80&w=600&auto=format&fit=crop" alt="Ooty Hills" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700">
+                        <span class="absolute bottom-4 left-4 bg-brand-orange text-white text-xs font-bold px-4 py-1.5 rounded-full shadow-md">4 Nights / 5 Days</span>
+                    </div>
+                    <div class="p-6 flex-grow space-y-4">
+                        <div class="flex justify-between items-center">
+                            <h3 class="text-2xl font-bold text-gray-900 dark:text-white group-hover:text-brand-orange transition-colors">Ooty & Mysore Special</h3>
+                            <span class="text-xs font-bold bg-orange-50 dark:bg-orange-950/40 text-brand-orange px-2.5 py-1 rounded-md">Royal Valleys</span>
+                        </div>
+                        <p class="text-gray-500 dark:text-gray-400 text-sm leading-relaxed">Visit the majestic Mysore Palace, beautiful botanical tea gardens of Ooty, and enjoy Doddabetta peak views.</p>
+                        <div class="flex flex-wrap gap-2 pt-2 text-xs font-semibold text-gray-600 dark:text-gray-400">
+                            <span class="bg-white dark:bg-[#0d1117] px-3 py-1.5 rounded-lg border border-gray-100 dark:border-gray-800">👑 Royal Palace</span>
+                            <span class="bg-white dark:bg-[#0d1117] px-3 py-1.5 rounded-lg border border-gray-100 dark:border-gray-800">🍃 Tea Gardens</span>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0 mt-auto">
+                        <a href="https://wa.me/918419994142?text=Hello%20Prathamesh,%20I%20want%20to%20inquire%20about%20the%20Ooty%20and%20Mysore%20Special%20Tour%20Package." target="_blank" class="w-full bg-brand-orange text-white font-bold py-3.5 px-6 rounded-xl flex items-center justify-center gap-2 hover:bg-orange-600 transition shadow-md">
+                            <span>Book Ooty Package</span> <span>➔</span>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="reviews" class="py-24 bg-gray-50 dark:bg-[#161b22] relative overflow-hidden transition-colors duration-300 border-t border-gray-100 dark:border-gray-800">
+        
+        <div class="absolute top-12 left-10 w-72 h-72 bg-brand-orange/5 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute bottom-12 right-10 w-72 h-72 bg-brand-green/5 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            
+            <div class="text-center mb-20" data-aos="fade-down" data-aos-duration="1000">
+                <p class="text-brand-orange font-bold tracking-[0.2em] uppercase text-xs mb-2">What Clients Say</p>
+                <h2 class="text-4xl md:text-5xl font-extrabold text-gray-900 dark:text-white leading-tight">
+                    Shivansh Travels <span class="text-brand-green">Reviews</span>
+                </h2>
+                <div class="w-24 h-1 bg-brand-orange mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-4 gap-12 items-center">
+                
+                <div class="lg:col-span-1 text-center bg-white dark:bg-[#0d1117] p-8 rounded-3xl shadow-sm border border-gray-100 dark:border-gray-800/60 z-20 relative">
+                    <h3 class="text-3xl font-black text-gray-900 dark:text-white tracking-tight">EXCELLENT</h3>
+                    <div class="text-yellow-400 text-2xl my-3 tracking-wide">⭐⭐⭐⭐⭐</div>
+                    <p class="text-xs text-gray-500 dark:text-gray-400 font-semibold uppercase tracking-wider mb-6">Based on Verified Reviews</p>
+                    
+                    <div class="flex items-center justify-center gap-1.5 pt-4 border-t border-gray-100 dark:border-gray-800/80">
+                        <span class="text-xl font-bold tracking-tight text-gray-600 dark:text-gray-300">Powered by</span>
+                        <span class="font-black text-xl tracking-tight"><span class="text-blue-500">G</span><span class="text-red-500">o</span><span class="text-yellow-500">o</span><span class="text-blue-500">g</span><span class="text-green-500">l</span><span class="text-red-500">e</span></span>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-3 overflow-hidden relative w-full group">
+                    <div class="flex gap-8 min-w-max animate-review-scroll">
+                        
+                        <div class="w-[400px] bg-white dark:bg-[#0d1117] p-8 rounded-3xl shadow-md border border-gray-100 dark:border-gray-800/60 flex flex-col justify-between hover:border-brand-orange/40 transition-all duration-300">
+                            <div class="space-y-4">
+                                <div class="flex justify-between items-start">
+                                    <div class="flex items-center gap-4">
+                                        <div class="w-12 h-12 rounded-full bg-blue-600 text-white font-bold flex items-center justify-center text-base shadow-inner">AG</div>
+                                        <div>
+                                            <h4 class="font-black text-gray-900 dark:text-white text-base flex items-center gap-1.5">Abhishek Gholekar <span class="text-blue-500 text-sm">🔵</span></h4>
+                                            <p class="text-xs text-gray-400">3 months ago</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-center gap-1 bg-gray-50 dark:bg-gray-800/40 px-2.5 py-1 rounded-full border border-gray-100 dark:border-gray-700/50">
+                                        <span class="font-black text-xs"><span class="text-blue-500">G</span><span class="text-red-500">o</span><span class="text-yellow-500">o</span></span>
+                                        <span class="text-[10px] font-bold text-gray-500 dark:text-gray-400 uppercase tracking-wider">Review</span>
+                                    </div>
+                                </div>
+                                <div class="text-yellow-400 text-sm">⭐⭐⭐⭐⭐</div>
+                                <p class="text-gray-700 dark:text-gray-300 text-[14px] font-medium leading-relaxed">
+                                    "I really appreciate Mr Prathamesh (Shivansh tours and travels), as we travel to Vengurla with my old age parents and he drive safely to reach our destination, due to his driving skills and attitude I recommend him for every trip, Thanks Prathamesh."
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="w-[400px] bg-white dark:bg-[#0d1117] p-8 rounded-3xl shadow-md border border-gray-100 dark:border-gray-800/60 flex flex-col justify-between hover:border-brand-green/40 transition-all duration-300">
+                            <div class="space-y-4">
+                                <div class="flex justify-between items-start">
+                                    <div class="flex items-center gap-4">
+                                        <div class="w-12 h-12 rounded-full bg-emerald-600 text-white font-bold flex items-center justify-center text-base shadow-inner">VK</div>
+                                        <div>
+                                            <h4 class="font-black text-gray-900 dark:text-white text-base flex items-center gap-1.5">Vaibhav Kalokhe <span class="text-blue-500 text-sm">🔵</span></h4>
+                                            <p class="text-xs text-gray-400">1 month ago</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-center gap-1 bg-gray-50 dark:bg-gray-800/40 px-2.5 py-1 rounded-full border border-gray-100 dark:border-gray-700/50">
+                                        <span class="font-black text-xs"><span class="text-blue-500">G</span><span class="text-red-500">o</span><span class="text-yellow-500">o</span></span>
+                                        <span class="text-[10px] font-bold text-gray-500 dark:text-gray-400 uppercase tracking-wider">Review</span>
+                                    </div>
+                                </div>
+                                <div class="text-yellow-400 text-sm">⭐⭐⭐⭐⭐</div>
+                                <p class="text-gray-700 dark:text-gray-300 text-[14px] font-medium leading-relaxed">
+                                    "We appointed Shivansh Tours and Travels for our Gujarat trip. The experience was excellent. The driving was extremely safe and superb, and the car was kept very clean. We felt like we were traveling in a luxury vehicle."
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="w-[400px] bg-white dark:bg-[#0d1117] p-8 rounded-3xl shadow-md border border-gray-100 dark:border-gray-800/60 flex flex-col justify-between hover:border-brand-orange/40 transition-all duration-300">
+                            <div class="space-y-4">
+                                <div class="flex justify-between items-start">
+                                    <div class="flex items-center gap-4">
+                                        <div class="w-12 h-12 rounded-full bg-orange-600 text-white font-bold flex items-center justify-center text-base shadow-inner">VN</div>
+                                        <div>
+                                            <h4 class="font-black text-gray-900 dark:text-white text-base flex items-center gap-1.5">Vinay Narkar <span class="text-xs bg-orange-100 text-brand-orange px-1.5 py-0.5 rounded font-bold">Local Guide</span></h4>
+                                            <p class="text-xs text-gray-400">2 months ago</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-center gap-1 bg-gray-50 dark:bg-gray-800/40 px-2.5 py-1 rounded-full border border-gray-100 dark:border-gray-700/50">
+                                        <span class="font-black text-xs"><span class="text-blue-500">G</span><span class="text-red-500">o</span><span class="text-yellow-500">o</span></span>
+                                        <span class="text-[10px] font-bold text-gray-500 dark:text-gray-400 uppercase tracking-wider">Review</span>
+                                    </div>
+                                </div>
+                                <div class="text-yellow-400 text-sm">⭐⭐⭐⭐⭐</div>
+                                <p class="text-gray-700 dark:text-gray-300 text-[14px] font-medium leading-relaxed font-sans">
+                                    "Shivansh Tours and Travels सोबतचा माझा अनुभव खूपच उत्तम होता. पूर्ण मुंबई ते कोकण रिटर्न ट्रिप अतिशय नीट प्लॅन केलेली होती, वेळेचं उत्कृष्ट पालन केलं आणि प्रवासभर सुरक्षित ड्रायव्हिंगमुळे फॅमिलीला खूपच सेफ वाटलं."
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="w-[400px] bg-white dark:bg-[#0d1117] p-8 rounded-3xl shadow-md border border-gray-100 dark:border-gray-800/60 flex flex-col justify-between hover:border-brand-orange/40 transition-all duration-300" aria-hidden="true">
+                            <div class="space-y-4">
+                                <div class="flex justify-between items-start"><div class="flex items-center gap-4"><div class="w-12 h-12 rounded-full bg-blue-600 text-white font-bold flex items-center justify-center text-base shadow-inner">AG</div><div><h4 class="font-black text-gray-900 dark:text-white text-base">Abhishek Gholekar</h4><p class="text-xs text-gray-400">3 months ago</p></div></div>
+                                <div class="flex items-center gap-1 bg-gray-50 dark:bg-gray-800/40 px-2.5 py-1 rounded-full border border-gray-100 dark:border-gray-700/50"><span class="font-black text-xs text-blue-500">G</span><span class="text-[10px] font-bold text-gray-500 uppercase tracking-wider">Review</span></div></div>
+                                <div class="text-yellow-400 text-sm">⭐⭐⭐⭐⭐</div><p class="text-gray-700 dark:text-gray-300 text-[14px] font-medium leading-relaxed">I really appreciate Mr Prathamesh (Shivansh travels), driven safely to reach destination.</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>  
+
+    <section id="contact" class="py-24 bg-gray-50 dark:bg-[#161b22] relative overflow-hidden transition-colors duration-300 border-t border-gray-100 dark:border-gray-800">
+        <div class="absolute top-1/4 -left-20 w-96 h-96 bg-brand-orange/10 rounded-full blur-[100px] animate-pulse pointer-events-none"></div>
+        <div class="absolute bottom-1/4 -right-20 w-96 h-96 bg-brand-green/10 rounded-full blur-[100px] animate-pulse pointer-events-none" style="animation-delay: 2s;"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16" data-aos="fade-down" data-aos-duration="1000">
+                <p class="text-brand-orange font-bold tracking-[0.2em] uppercase text-xs mb-2">Get In Touch</p>
+                <h2 class="text-4xl md:text-5xl font-extrabold text-gray-900 dark:text-white leading-tight">
+                    Contact <span class="text-brand-green">Shivansh Travels</span>
+                </h2>
+                <div class="w-24 h-1 bg-brand-orange mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div class="space-y-8" data-aos="fade-right" data-aos-duration="1000">
+                    <div>
+                        <h3 class="text-2xl font-bold text-gray-800 dark:text-white mb-4">Let's Plan Your Next Journey!</h3>
+                        <p class="text-gray-500 dark:text-gray-400 text-sm leading-relaxed max-w-md">
+                            Have questions about our rental tariffs? Feel free to reach out anytime.
+                        </p>
+                    </div>
+
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-5 p-4 rounded-2xl bg-white dark:bg-[#0d1117] border border-gray-100 shadow-sm transition-all duration-300 hover:border-brand-orange/30 group">
+                            <div class="w-12 h-12 rounded-xl bg-orange-500/10 text-brand-orange flex items-center justify-center text-xl transform group-hover:rotate-12 transition duration-300">📍</div>
+                            <div>
+                                <h4 class="font-bold text-gray-900 dark:text-white text-sm">Our Registered Office</h4>
+                                <p class="text-xs text-gray-500 dark:text-gray-400 mt-0.5">Sagari Gymkhana Road, Dombivli (East) - 421201.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-5 p-4 rounded-2xl bg-white dark:bg-[#0d1117] border border-gray-100 shadow-sm transition-all duration-300 hover:border-brand-green/30 group">
+                            <div class="w-12 h-12 rounded-xl bg-brand-green/10 text-brand-green flex items-center justify-center text-xl transform group-hover:-rotate-12 transition duration-300">📞</div>
+                            <div>
+                                <h4 class="font-bold text-gray-900 dark:text-white text-sm">Call / WhatsApp Support</h4>
+                                <p class="text-xs font-bold text-gray-600 dark:text-gray-300 mt-0.5">+91 8419994142 | +91 7350501479</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pt-2">
+                        <h4 class="text-xs font-bold uppercase tracking-widest text-gray-400 mb-4">Follow Our Updates & Connect</h4>
+                        <div class="flex gap-4">
+                            <a href="https://instagram.com/Shivansh_tours_travels2020" target="_blank" class="w-12 h-12 rounded-xl bg-white dark:bg-[#0d1117] border border-gray-200 flex items-center justify-center hover:bg-gradient-to-tr hover:from-[#f9ce34] hover:via-[#ee2a7b] hover:to-[#6228d7] hover:text-white hover:scale-110 transition duration-300">
+                                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                            </a>
+                            <a href="https://facebook.com/Shivansh_tours_travels2020" target="_blank" class="w-12 h-12 rounded-xl bg-white dark:bg-[#0d1117] border border-gray-200 flex items-center justify-center hover:bg-[#1877F2] hover:text-white hover:scale-110 transition duration-300">
+                                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                            </a>
+                            <a href="mailto:shivanshtoursandtravels@gmail.com" aria-label="Email" class="w-12 h-12 rounded-xl bg-white dark:bg-[#0d1117] border border-gray-200 dark:border-gray-800 flex items-center justify-center text-gray-700 dark:text-gray-300 hover:bg-[#EA4335] hover:text-white hover:scale-110 hover:shadow-[0_10px_20px_rgba(234,67,53,0.3)] transition-all duration-300 group">
+                                <svg class="w-6 h-6 transition-transform duration-300 group-hover:scale-105" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 010 19.366V5.457c0-1.318 1.455-2.095 2.533-1.325L12 10.985l9.467-7.253C22.545 2.962 24 3.738 24 5.457z"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative" data-aos="fade-left" data-aos-duration="1000">
+                    <div class="absolute -inset-1.5 bg-gradient-to-tr from-brand-orange via-yellow-500 to-brand-green rounded-3xl blur opacity-25"></div>
+                    <div class="relative bg-white dark:bg-[#161b22] p-8 md:p-10 rounded-3xl shadow-xl border border-gray-100 dark:border-gray-800/80">
+                        <div id="form-container" class="space-y-5">
+                            <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2 flex items-center gap-2">
+                                Send a Quick Message <span class="text-lg">⚡</span>
+                            </h3>
+                            <form id="inquiry-form" class="space-y-5">
+                                <div class="effect-input-box relative">
+                                    <input type="text" id="form-name" required placeholder=" " class="w-full bg-gray-50/50 dark:bg-[#0d1117] border border-gray-200 dark:border-gray-800 rounded-xl px-4 py-3.5 text-sm text-gray-900 dark:text-white focus:outline-none transition-all duration-300">
+                                    <label class="absolute left-4 top-3.5 text-sm text-gray-400 pointer-events-none transition-all duration-300">Your Full Name</label>
+                                </div>
+                                <div class="effect-input-box relative">
+                                    <input type="tel" id="form-phone" required placeholder=" " class="w-full bg-gray-50/50 dark:bg-[#0d1117] border border-gray-200 dark:border-gray-800 rounded-xl px-4 py-3.5 text-sm text-gray-900 dark:text-white focus:outline-none transition-all duration-300">
+                                    <label class="absolute left-4 top-3.5 text-sm text-gray-400 pointer-events-none transition-all duration-300">Phone Number</label>
+                                </div>
+                                <div class="relative">
+                                    <select id="form-service" required class="w-full bg-gray-50/50 dark:bg-[#0d1117] border border-gray-200 dark:border-gray-800 rounded-xl px-4 py-3.5 text-sm text-gray-700 dark:text-gray-300 focus:outline-none focus:border-brand-orange transition-all duration-300 appearance-none cursor-pointer">
+                                        <option value="" disabled selected>Select Service Needed</option>
+                                        <option>Maruti Ertiga (6+1 Seater)</option>
+                                        <option>Premium Dzire (4+1 Seater)</option>
+                                        <option>Flight Ticket Booking</option>
+                                        <option>Holiday Tour Package Tour</option>
+                                        <option>Pilgrimage / Devdarshan Tour</option>
+                                    </select>
+                                    <div class="absolute right-4 top-4 text-xs text-gray-400 pointer-events-none">▼</div>
+                                </div>
+                                <div class="effect-input-box relative">
+                                    <textarea id="form-msg" rows="3" required placeholder=" " class="w-full bg-gray-50/50 dark:bg-[#0d1117] border border-gray-200 dark:border-gray-800 rounded-xl px-4 py-3.5 text-sm text-gray-900 dark:text-white focus:outline-none transition-all duration-300"></textarea>
+                                    <label class="absolute left-4 top-3.5 text-sm text-gray-400 pointer-events-none transition-all duration-300">Your Travel Requirement...</label>
+                                </div>
+                                <button type="submit" class="cyber-btn w-full relative overflow-hidden bg-gray-900 dark:bg-brand-orange text-white font-bold py-4 px-6 rounded-xl text-sm uppercase tracking-wider transition-all duration-300 shadow-md">
+                                    <span class="relative z-10 flex items-center justify-center gap-2">
+                                        Send Inquiry Message <span>➔</span>
+                                    </span>
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+
+    <footer id="contact" class="bg-gray-950 text-white pt-20 pb-10 relative overflow-hidden border-t-8 border-brand-orange">
+        <div class="absolute top-0 right-0 w-64 h-64 bg-brand-orange rounded-full blur-3xl opacity-10 -mr-20 -mt-20"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10" data-aos="fade-up">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 border-b border-gray-800 pb-16">
+                
+                <div class="space-y-6">
+                    <div class="flex items-center gap-2">
+                        <svg class="w-8 h-8 text-brand-orange" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/>
+                        </svg>
+                        <h2 class="text-2xl font-black tracking-widest text-white uppercase">Shivansh</h2>
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed">Making your travel dreams come true with safe, punctual, and highly professional transportation services across Maharashtra.</p>
+                    <div class="bg-gray-900 p-4 rounded-lg border border-gray-800 inline-block">
+                        <p class="text-xs text-brand-green font-bold uppercase tracking-wider mb-1">Managed By</p>
+                        <p class="text-sm font-semibold text-white">Prathamesh Bhingarde</p>
+                        <p class="text-xs text-gray-500">Founder & Travel Consultant</p>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-bold mb-6 text-white tracking-wider relative inline-block after:content-[''] after:absolute after:w-1/2 after:h-1 after:bg-brand-orange after:bottom--2 after:left-0 after:-mb-2">Quick Links</h3>
+                    <ul class="space-y-3 mt-4">
+                        <li><a href="#home" class="text-gray-400 hover:text-brand-orange transition flex items-center gap-2 text-sm"><span class="text-brand-orange">▸</span> Home</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-brand-orange transition flex items-center gap-2 text-sm"><span class="text-brand-orange">▸</span> About Us</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-brand-orange transition flex items-center gap-2 text-sm"><span class="text-brand-orange">▸</span> Our Services</a></li>
+                        <li><a href="#fleet" class="text-gray-400 hover:text-brand-orange transition flex items-center gap-2 text-sm"><span class="text-brand-orange">▸</span> Our Fleet</a></li>
+                        <li><a href="#packages" class="text-gray-400 hover:text-brand-orange transition flex items-center gap-2 text-sm"><span class="text-brand-orange">▸</span> Packages</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-brand-orange transition flex items-center gap-2 text-sm"><span class="text-brand-orange">▸</span> Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-bold mb-6 text-white tracking-wider relative inline-block after:content-[''] after:absolute after:w-1/2 after:h-1 after:bg-brand-orange after:bottom--2 after:left-0 after:-mb-2">Contact Us</h3>
+                    <ul class="space-y-4 mt-4">
+                        <li class="flex items-start gap-3"><span class="text-xl">📍</span><span class="text-gray-400 text-sm leading-relaxed">Sagari Gymkhana Road, Abhinav Vidyalaya, Dombivli (East) - 421201</span></li>
+                        <li class="flex items-center gap-3"><span class="text-xl">📞</span><span class="text-gray-400 text-sm">+91 8419994142 <br> +91 7350501479</span></li>
+                        <li class="flex items-center gap-3"><span class="text-xl">✉️</span><span class="text-gray-400 text-sm">shivanshtoursandtravels@gmail.com</span></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-bold mb-6 text-white tracking-wider relative inline-block after:content-[''] after:absolute after:w-1/2 after:h-1 after:bg-brand-orange after:bottom--2 after:left-0 after:-mb-2">Follow Us</h3>
+                    <p class="text-gray-400 text-sm mb-6 mt-4">Stay updated with our latest tour packages and offers.</p>
+                    <div class="flex gap-4">
+                        <a href="https://instagram.com/Shivansh_tours_travels2020" target="_blank" aria-label="Instagram" class="w-12 h-12 rounded-xl bg-white dark:bg-[#161b22] border border-gray-200 dark:border-gray-800/80 flex items-center justify-center text-gray-700 dark:text-gray-300 hover:bg-gradient-to-tr hover:from-[#f9ce34] hover:via-[#ee2a7b] hover:to-[#6228d7] hover:text-white hover:scale-110 shadow-sm transition-all duration-300">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                        </a>
+                        <a href="https://facebook.com/Shivansh_tours_travels2020" target="_blank" aria-label="Facebook" class="w-12 h-12 rounded-xl bg-white dark:bg-[#161b22] border border-gray-200 dark:border-gray-800/80 flex items-center justify-center text-gray-700 dark:text-gray-300 hover:bg-[#1877F2] hover:text-white hover:scale-110 shadow-sm transition-all duration-300">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                        </a>
+                        <a href="mailto:shivanshtoursandtravels@gmail.com" aria-label="Email" class="w-12 h-12 rounded-xl bg-white dark:bg-[#0d1117] border border-gray-200 dark:border-gray-800 flex items-center justify-center text-gray-700 dark:text-gray-300 hover:bg-[#EA4335] hover:text-white hover:scale-110 hover:shadow-[0_10px_20px_rgba(234,67,53,0.3)] transition-all duration-300 group">
+                                <svg class="w-6 h-6 transition-transform duration-300 group-hover:scale-105" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 010 19.366V5.457c0-1.318 1.455-2.095 2.533-1.325L12 10.985l9.467-7.253C22.545 2.962 24 3.738 24 5.457z"/>
+                                </svg>
+                            </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-10 text-gray-500 text-sm tracking-wider flex flex-col md:flex-row justify-between items-center gap-4">
+                <p>&copy; 2026 Shivansh Tours & Travels. All rights reserved.</p>
+                <p>Designed with ❤️ for exceptional journeys.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
